@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Progress Bar</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'result.css' %}">
+  {% block content %}
+
+  {% load humanize %}
+
+  {% load customfilters %}
+  <style>
+    .progress-div{
+        margin-top: 120px;
+        margin-left: 100px;
+    }
+    .progress-ppp{
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+    .progress-container {
+    width: 40%;
+    background-color: black;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .progress-bar {
+    height: 100%;
+    background-color: blue;
+    text-align: center;
+    line-height: 25px;
+    color: white;
+    font-weight: bold;
+    transition: width 0.3s ease;
+    }
+    .result-pp{
+      margin-top: 10px;
+      font-size: 20px;
+      text-decoration: underline;
+    }
+    .result-ppp{
+      margin-top: 20px;
+      font-size: 20px;      
+    }
+    .thanks{
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 25px;
+    }
+    @media (max-width: 500px) {
+      .progress-div{
+        margin-left: 30px;
+      }
+      .progress-container{
+        width: 60%;
+      }
+    }
+    @media (max-width: 360px) {
+
+    }
+    @media (max-width: 345px) {
+
+    } 
+    @media (max-width: 320px) {
+
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="progress-div">
+    <h1 class="result-p">Result</h1>
+    <p class="result-pp">{{ category.title }}</p>
+    <p class="result-ppp">Total Votes = {{ category.total_vote }}</p>
+
+    {% for item in items %}
+
+    {% if request.user|has_voted:item.voters.all %}
+      <h2 class="progress-ppp">{{ item.title }} --- {{ item.total_vote }} vote{{item.total_vote|pluralize:",s"}} --- <strong>You Voted</strong> </h2>
+      <div class="progress-container">
+        <div class="progress-bar" style="width: {{item.percentagevote | floatformat:2}}%">{{item.percentagevote | floatformat:2}}%</div>
+      </div>
+    {% else %}
+      <h2 class="progress-ppp">{{ item.title }} --- {{ item.total_vote }} vote{{item.total_vote|pluralize:",s"}}</h2>
+      <div class="progress-container">  
+        <div class="progress-bar" style="width: {{item.percentagevote | floatformat:2}}%">{{item.percentagevote | floatformat:2}}%</div>
+      </div>
+      {% endif %}
+
+
+    {% endfor %}
+    <p class="thanks">Thank You For Voting</p>
+
+    <!-- <h2 class="progress-ppp">Raheemah</h2>
+    <div class="progress-container">
+      <div class="progress-bar">70%</div>
+    </div>
+
+    <h2 class="progress-ppp">Abdurrafeeq</h2>
+    <div class="progress-container">
+      <div class="progress-bar">70%</div>
+    </div> -->
+  </div>
+
+  {% endblock %}
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>Voting Page</title>
+    {% block content %}
+    <style>
+        .div1{
+            margin-top: 140px;
+            text-align: center;
+            margin-left: 40px;
+            margin-right: 40px;
+            padding: 60px 30px;
+            background-color: whitesmoke;
+            border-radius: 5px;
+        }
+        .ppp1{
+            font-size: 30px;
+            color: black;
+        }
+        .ppp2{
+            margin: 40px 0px;
+            margin-bottom: 60px;
+            font-size: 18px;
+            color: black;
+        }
+        .vote-link{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            border: 2px black solid;
+            padding: 5px 10px;
+            background-color: black;
+            border-radius: 5px;
+        }
+        .vote-link:hover{
+            color: black;
+            background-color: white;
+            transition: 0.5s ease all;
+        }
+
+        /*Second Section*/
+
+        .div2{
+            margin-top: 120px;
+            display: flex;
+            margin-bottom: 200px;
+        }
+        .div21{
+            margin-left: 150px;
+            border: 2px grey solid;
+            width: 400px;
+            text-align: center;
+            align-items: center;
+            padding: 25px 0px;
+            border-radius: 5px;
+        }
+        .ppp3{
+            font-size: 25px;
+            text-align: center;
+            align-items: center;
+        }
+        .ppp4{
+            margin-top: 40px;
+            margin-bottom: 35px;
+            text-align: center;
+            align-items: center;
+        }
+        .vote-link2{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            background-color: black;
+            border: 2px black solid;
+            padding: 3px 100px;
+            border-radius: 5px;
+        }
+        .vote-link2:hover{
+            color: black;
+            background-color: white;
+            transition: 0.5s ease all;
+        }
+        footer{
+            margin-top: 100px;
+            background-color: black;
+            color: white;
+            padding: 40px 0px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p{
+            text-align: center;
+            align-items: center;
+        } 
+        /* Media Query */
+        @media (max-width: 700px) {
+            .div2{
+                display: block;
+                margin-top: 40px;
+                
+            }
+            .div21{
+                margin-top: 20px;
+                margin-left: 130px;
+            }
+        }
+        @media (max-width: 500px) {
+            .div21{
+                margin-left: 40px;
+                width: 345px;
+            }
+        }
+        @media (max-width: 414px) {
+            .div21{
+                width: 330px;
+            }
+        }
+        @media (max-width: 393px) {
+            .div21{
+                width: 310px;
+            }
+        }
+        @media (max-width: 375px) {
+            .div21{
+                width: 290px;
+            }
+        }
+        @media (max-width: 360px) {
+            .div21{
+                width: 275px;
+            }
+        }
+        @media (max-width: 345px) {
+            .div21{
+                width: 260px;
+            }
+        } 
+        @media (max-width: 320px) {
+            .div21{
+                width: 240px;
+            }
+            .vote-link2{
+                padding: 3px 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+		<div class="div1">
+			<p class="ppp1">Vote Now!!!</p>
+			<p class="ppp2">Make a difference in your community and beyond by casting your vote. <br> Every election matters, and every voice counts. Be heard, be counted and be part of the change.</p>
+
+			<a href="#votesection" class="vote-link">Let's Vote</a>
+		</div>
+	</section>
+
+	<section id="votesection"> 
+		<div class="div2">
+        {% for category in categories %}
+			<div class="div21">
+				<p class="ppp3">{{ category.title }}</p>
+				<p class="ppp4">{{ category.description }}</p>
+				<a href="{% url 'home' category.slug %}" class="vote-link2">Vote</a>
+			</div>
+        {% endfor %}
+
+			<!-- <div class="div21">
+				<p class="ppp3">Treasurer</p>
+				<p class="ppp4">lum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<a href="" class="vote-link2">Vote</a>
+			</div> -->
+
+		</div>
+	</section>
+
+	<footer>
+		<p>&copy All rights reserved. 4TripleA.</p>
+	</footer>
+</body>
+{% endblock %}
+</html>
+<h1>HELLO WORLD</h1>

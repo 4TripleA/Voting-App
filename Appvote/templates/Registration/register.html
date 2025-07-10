@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    {% block content %}
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .first{
+            color: black;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .second{
+            text-align: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            margin-left: 350px;
+            margin-right: 350px;
+            height: 450px;
+            margin-top: 100px;
+            padding-top: 40px;
+            border-radius: 20px;
+            border: 1px black solid;
+        }
+        input[type=text], input[type=email], input[type=password]{
+            padding: 5px 10px;
+            margin-bottom: 30px;
+            width: 300px;
+            height: 30px;
+        }
+        .seventh{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .submit{
+            width: 240px;
+            background-color: black;
+            height: 30px;
+            color: white;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+        .submit:hover{
+            color: black;
+            background-color: white;
+            transition: 0.5s ease all;
+        }
+        .login-link{
+            font-size: 15px;
+            margin-top: 20px;
+            margin-left: 28px;
+        }
+        a{
+            color: black;
+        }
+        label{
+            display: none;
+        }
+        @media (max-width: 700px) {
+            .second{
+                margin-left: 70px;
+                width: 550px;
+            }
+        }
+        @media (max-width: 500px) {
+            .second{
+                margin-top: 50px;
+                margin-left: 15px;
+                width: 400px;
+                height: 600px;
+            }
+            .submit{
+                margin-left: 20px;
+                width: 300px;
+            }
+        }
+        @media (max-width: 414px) {
+            .second{
+                width: 380px;
+            }
+        }
+        @media (max-width: 393px) {
+            .second{
+                width: 365px;
+            }
+        } 
+        @media (max-width: 390px) {
+            .second{
+                width: 360px;
+                height: 540px;
+            }
+        }
+        @media (max-width: 375px) {
+            .second{
+                width: 345px;
+            }
+        }
+        @media (max-width: 360px) {
+            .second{
+                width: 330px;
+            }
+            input[type=text], input[type=email], input[type=password]{
+                width: 250px;
+            }
+        } 
+        @media (max-width: 345px) {
+            .second{
+                width: 315px;
+            }
+            .submit{
+                width: 200px;
+            }
+        } 
+        @media (max-width: 320px) {
+            .second{
+                padding-top: 15px;
+                padding-bottom: 10px;
+                margin-top: 10px;
+                width: 295px;
+                height: 435px;
+            }
+            h1{
+                font-size: 15px;
+            }
+            .submit{
+                width: 100px;
+            }
+            h2{
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="second">
+        <div class="first">
+            <h1>REGISTER NOW!!!</h1>
+        </div>        
+    
+        <form method="post" action="" class="register-form">
+            {% csrf_token %}
+            {{ form}}
+            <!-- <div class="third">
+                <label>USERNAME</label>
+                <input type="text" placeholder="Username" class="Username" required>
+            </div>
+
+            <div class="fourth">
+                <label>EMAIL</label>
+                <input type="email" placeholder="Email" class="email" required>
+            </div>
+
+            <div class="fifth">
+                <label>PASSWORD</label>
+                <input type="password" placeholder="Password" class="password" required>
+            </div>
+
+            <div class="sixth"> 
+                <label>CONFIRM PASSWORD</label>
+                <input type="password" placeholder="Confirm Password" class="c-password">
+            </div> -->
+
+            <div class="seventh">
+                <button type="submit" class="submit">REGISTER</button>
+
+                <h2 class="login-link">Already have an Account? <a href="{% url 'login' %}">Login</a></h2>
+            </div>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+</html>

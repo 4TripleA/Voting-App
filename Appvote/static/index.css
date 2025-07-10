@@ -1,0 +1,80 @@
+.div1{
+	margin-top: 140px;
+	text-align: center;
+	margin-left: 40px;
+	margin-right: 40px;
+	padding: 60px 30px;
+	background-color: whitesmoke;
+	border-radius: 5px;
+}
+.ppp1{
+	font-size: 30px;
+	color: black;
+}
+.ppp2{
+	margin: 40px 0px;
+	margin-bottom: 60px;
+	font-size: 18px;
+	color: black;
+}
+.vote-link{
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	border: 2px black solid;
+	padding: 5px 10px;
+	background-color: black;
+	border-radius: 5px;
+}
+.vote-link:hover{
+	color: black;
+	background-color: white;
+	transition: 0.5s ease all;
+}
+
+/*Second Section*/
+
+.div2{
+	margin-top: 120px;
+	display: flex;
+}
+.div21{
+	margin-left: 150px;
+	border: 2px grey solid;
+	width: 400px;
+	text-align: center;
+	align-items: center;
+	padding: 20px 20px;
+}
+.ppp3{
+	font-size: 25px;
+}
+.ppp4{
+	margin-top: 40px;
+	margin-bottom: 35px;
+	width: 390px;
+}
+.vote-link2{
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	background-color: black;
+	border: 2px black solid;
+	padding: 3px 100px;
+	border-radius: 5px;
+}
+.vote-link2:hover{
+	color: black;
+	background-color: white;
+	transition: 0.5s ease all;
+}
+footer{
+	margin-top: 100px;
+	background-color: black;
+	color: white;
+	padding: 40px 0px
+}
+footer p{
+	text-align: center;
+	align-items: center;
+}
