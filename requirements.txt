@@ -17,8 +17,6 @@ psycopg2==2.9.10
 Pygments==2.19.1
 PyJWT==2.10.1
 pyodbc==5.2.0
-pypiwin32==223
-pywin32==310
 requests==2.32.3
 six==1.16.0
 source==1.2.0
