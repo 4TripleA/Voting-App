@@ -6,7 +6,7 @@ from .views import CustomLogoutView
 
 
 urlpatterns = [
-    path("", auth_views.LoginView.as_view(next_page='index'), name="login"), 
+    path("", auth_views.LoginView.as_view(next_page='index', template_name='registration/login.html'), name="login"), 
     path("index/", views.index, name="index"),
     path("home/<str:slug>", views.home, name="home"),
     path("result/<str:slug>", views.result, name="result"),
